@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bluefin Test</title>
+    <script type="text/javascript" src="bluefin-sdk.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    Bluefin.init("http://10.240.141.70:2556");
+    Bluefin.ping().then(function(data){
+        console.dir(data);
+    })
+    Bluefin.listAllVersion().then(function(data){
+        console.dir(data);
+    });
+    Bluefin.retrace("com.neteae.mai", 12).then(function(data){
+        console.dir(data);
+    }, function(err){
+        console.dir(err);
+    });
+</script>
+</body>
+</html>
